@@ -12,6 +12,7 @@
 
     <tbody>
       <% @articles.each do |article| %>
+      by <%= article.user.username %>
         <tr>
           <td><%= article.title %></td>
           <td><%= article.description %></td>
