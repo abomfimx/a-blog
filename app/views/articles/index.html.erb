@@ -12,8 +12,7 @@
 
     <tbody>
       <% @articles.each do |article| %>
-      by <%= article.user.username %>
-        <tr>
+         <tr>
           <td><%= article.title %></td>
           <td><%= article.description %></td>
           <td><%= link_to 'Show', article_path(article) %></td>
