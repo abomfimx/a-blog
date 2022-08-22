@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = User.last.id
     if @article.save
       redirect_to @article, notice: 'Article was created successfully.'
     else
@@ -26,7 +27,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to article_path(@article), notice: 'Article was saved succesfully'
     else
-      flash.now[:notice] = 'Could not update it.'
+      # flash.now[:warn] = 'Could not update it.'
       render :edit
     end
   end

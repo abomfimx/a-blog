@@ -54,3 +54,7 @@ body {
 .navbar-toggler:hover {
   color: rgb(140, 206, 140);
 }
+
+.alert-dismissible {
+  padding-left: close-font-size + $alert-padding-x * 2;
+}
