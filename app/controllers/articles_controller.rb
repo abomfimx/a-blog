@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user_id = User.last.id
+    @article.user = User.last
     if @article.save
       redirect_to @article, notice: 'Article was created successfully.'
     else
