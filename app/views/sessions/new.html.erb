@@ -1,0 +1,28 @@
+<h1 class="text-center mt-4">Login</h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(scope: :session, url: login_path, data: { turbo: false }, class: "shadow p-3 mb-3 bg-info rounded") do |form| %>
+        <div class="row mb-3">
+          <%= form.label :email, class: "col-2 col-form-label text-light" %> 
+          <div class="col-10">
+            <%= form.email_field :email, class: "form-control shadow rounded", placeholder: "Enter your e-mail"  %>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <%= form.label :password, class: "col-2 col-form-label text-light" %> 
+          <div class="col-10">
+            <%= form.password_field :password, class: "form-control shadow rounded", placeholder: "Enter your password"  %>
+          </div>
+        </div>
+        <div class="col-auto text-center">
+            <%= form.submit "Login", class: "btn btn-outline-light btn-lg text-smokewhite" %>
+        </div>
+      <% end %>
+      <div class="col-auto text-center"> 
+        <%= link_to '[ Cancel and Return to articles list ]', articles_path, class: "text-info", id: 'back_lnk' %>
+      </div>    
+    </div>
+  </div>
+</div>
