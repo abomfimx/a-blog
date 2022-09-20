@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
   def require_same_user
     if current_user != @user && !current_user.admin?
-      redirect_to @user, notice: 'You can only edit or delete your own account'
+      redirect_to @user, alert: 'You can only edit or delete your own account'
     end
   end
 end
